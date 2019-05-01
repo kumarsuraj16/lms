@@ -1,0 +1,72 @@
+<html>
+<head><title>odd</title>
+</head>
+<body>
+<form action="userform.html" onsubmit="return validation()">
+<label>UserName</label>
+<input type="text" id="user"><br>
+<span id="username"></span><br>
+<label>Password</label>
+<input type="text" id="pass"><br>
+<span id="password"></span><br>
+<label>confirm password</label>
+<input type="text" id="cp"><br>
+<span id="confirm"></span><br>
+<label>Mobile</label>
+<input type="text" id="mob"><br>
+<span id="mobile"></span><br>
+<label>email</label>
+<input type="text" id="email"><br>
+<span id="emails"></span><br>
+<input type="submit" value="submit">
+</form>
+<script>
+function validation()
+{
+var user=document.getElementById("user").value;
+var pass=document.getElementById("pass").value;
+var cmp=document.getElementById("cp").value;
+var mb=document.getElementById("mob").value;
+var email=document.getElementById("email").value
+if(user=="")
+{
+document.getElementById("username").innerHTML="username can't be blank";
+return false;
+}
+if((user.length<=2)||(user.length>20))
+{
+document.getElementById("username").innerHTML="invalid length";
+}
+if(!isNaN(user))
+{
+document.getElementById("username").innerHTML="invalid syntax";
+}
+if(pass=="")
+{
+document.getElementById("password").innerHTML="password can't be blank";
+return false;
+}
+if(cmp=="")
+{
+document.getElementById("confirm").innerHTML="password can't be blank";
+return false;
+}
+if(pass!=cmp)
+{
+document.getElementById("confirm").innerHTML="password cp mismatch";
+return false;
+}
+if(mb=="")
+{
+document.getElementById("mobile").innerHTML="mobile can't be blank";
+return false;
+}
+if(email=="")
+{
+document.getElementById("emails").innerHTML="email can't be blank";
+return false;
+}
+}
+</script>
+</body>
+</html>
